@@ -1,0 +1,22 @@
+{
+  "name": "coffee-chat",
+  "version": "1.0.0",
+  "description": "An app that allows users to chat in real time with each other",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tbetti/coffee-chat.git"
+  },
+  "author": "Tiana Bettinson, Derrick Bueno, Varuni Sinha, Allie Soliz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbetti/coffee-chat/issues"
+  },
+  "homepage": "https://github.com/tbetti/coffee-chat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+// will store our data in sequelize, instead of our memory
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // configure our session
 const sess = {
   secret: 'Super secret secret',

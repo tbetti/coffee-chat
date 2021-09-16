@@ -10,6 +10,20 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+// configure our session
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+//  starts up our session using express-session
+app.use(session(sess));
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

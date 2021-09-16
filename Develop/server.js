@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 // const helpers = require('./utils/helpers');
 const routes = require('./controllers');
-const session = require('express-sessions');
+const session = require('express-session');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ });
 
 // will store our data in sequelize, instead of our memory
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // configure our session
 const sess = {
@@ -20,13 +20,13 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize
-  // })
+  store: new SequelizeStore({
+    db: sequelize
+  })
 };
 
 //  starts up our session using express-session
-// app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

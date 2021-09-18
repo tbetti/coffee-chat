@@ -1,0 +1,12 @@
+body{
+  padding: 50px;
+  background-image: url("friends.jpg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.mb-3 {
+  background-color: white;
+  width: 50%;
+}
+

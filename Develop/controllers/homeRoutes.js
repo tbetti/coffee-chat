@@ -3,7 +3,7 @@ const router = require('express').Router();
 router.get('/', (req, res)=>{
     try{
         res.render('login');
-    }catch(err){
+    } catch(err){
         res.json(err)
     }
 });

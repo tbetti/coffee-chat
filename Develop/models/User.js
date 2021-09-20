@@ -18,6 +18,8 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        // Might add name to persist in the chat room
+        
         name: {
             type: DataTypes.STRING,
             allowNull: false,

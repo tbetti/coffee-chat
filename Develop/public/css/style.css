@@ -1,8 +1,9 @@
-body {
+.hero-image {
 	padding: 50px;
 	background-image: url("../friends.jpg");
 	background-repeat: no-repeat;
 	background-size: 50%;
+	height: 100vh;
 }
 
 .mb-3 {

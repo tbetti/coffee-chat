@@ -19,9 +19,10 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     // render templater with Sequelize data
     try {
+        console.log(req.body);
 
         // checking user email, if it exists in our database
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        const userData = await User.findOne({ where: { email: req.body.username } });
 
         if (!userData) {
             res
@@ -29,6 +30,7 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect email or password, please try again' });
             return;
         }
+        console.log(userData, 0);
 
         // checking user password, for hashed password in database associated with the email 
         const validPassword = await userData.checkPassword(req.body.password);
@@ -39,6 +41,7 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect email or password, please try again' });
             return;
         }
+        console.log(userData, 1);
 
         // if both email and password are correct will change logged_in to true
         req.session.save(() => {

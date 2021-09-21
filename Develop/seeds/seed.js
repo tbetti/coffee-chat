@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { use } = require('../controllers/loginRoutes');
+// const { use } = require('../controllers/api/loginRoutes');
 const { User } = require('../models');
 
 const userData = require('./userData.json');

@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
-const io = require('socket.io')(3000);
+const io = require('socket.io')();
 const users = {};
 // const helpers = require('./utils/helpers');
 const routes = require('./controllers');
@@ -27,20 +27,24 @@ const sess = {
   })
 };
 
-// 
+// Connect socket to server
 io.on('connection', socket => {
+  // create new socket user and display that user is connected
   socket.on('new-user', name => {
     users[socket.id] = name
     socket.broadcast.emit('user-connected', name)
   })
+  // creates message object when received from other user
   socket.on('send-chat-message', message => {
     socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] })
   })
+  // display when user disconnects
   socket.on('disconnect', () => {
     socket.broadcast.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
   })
 })
+
 //  starts up our session using express-session
 app.use(session(sess));
 
@@ -55,5 +59,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+  const server = app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+  io.attach(server);
 });

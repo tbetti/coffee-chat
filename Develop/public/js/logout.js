@@ -6,11 +6,11 @@ const logout = async () => {
     });
 
     if (response.ok) {
-       
-        document.location.replace('/login');
+       // If logout successful, return to homepage/login
+        document.location.replace('/');
     } else {
         alert('Failed to log out');
     }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+document.querySelector('#logout-btn').addEventListener('click', logout);

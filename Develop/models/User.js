@@ -20,10 +20,10 @@ User.init(
         },
         // Might add name to persist in the chat room
         
-        // name: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,

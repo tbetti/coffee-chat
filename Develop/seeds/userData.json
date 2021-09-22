@@ -1,6 +1,12 @@
 [
     {
+        "name": "Person Personsen",
         "email": "person@hotmail.com",
+        "password": "password12345"
+    },
+    {
+        "name": "Human",
+        "email": "human@hotmail.com",
         "password": "password12345"
     }
 ]

@@ -1,29 +1,52 @@
 <section class="hero-image">
-<div id="main-container">
-<div>
-  <h1>Birds of a Feather</h1>
-</div>
+  <div id="main-container">
+    <div>
+      <h1>Birds of a Feather</h1>
+    </div>
 
+    {{!-- login container --}}
+    <div class="main-container2">
+      <br>
+      <h3>Find your own nest</h3>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="loginstaticEmail" value="email@example.com">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="logininputPassword">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <button class="btn btn-success" id="log-in">Log In</button>
+      </div>
+    </div>
 
-<div class="main-container2">
-  <br>
-  <h3>Find your own nest</h3>
-  <div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+    {{!-- register container --}}
+    <div class="main-container2">
+      <br>
+      <h3>Find your own nest</h3>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="registerstaticEmail" value="email@example.com">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="registerinputPassword">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <button class="btn btn-success" id="register">Register</button>
+      </div>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword">
-    </div>
-</div>
-<div class="mb-3 row">
-  <button class="btn btn-success" id="submit">Submit</button>
-</div>
-</div>
-</div>
-<script src="/js/login.js"></script>
+
+
+  <script src="/js/login.js"></script>
 </section>

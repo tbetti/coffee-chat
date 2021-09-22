@@ -18,6 +18,26 @@
 	justify-content: center;
 }
 
+/* Tiana's additions - Next 4 blocks */
+.img-btn-container{
+	position: relative;
+	width: 80%;
+}
+.img-btn-container img{
+	width: auto;
+	height: 100vh;
+}
+.img-btn-container button{
+	position: absolute;
+	top: 3%;
+  	left: 3%;
+}
+.img-btn-container h2{
+	position: absolute;
+	top: 3%;
+	left: 13%;
+}
+
 #message-container {
 	width: 80%;
 	max-width: 1200px;

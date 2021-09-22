@@ -3,13 +3,14 @@ const registerHandler = async (event) => {
 
     console.log("registerHandler");
 
-    const username = document.querySelector('#registerstaticEmail').value.trim();
+    const name = document.querySelector('#registerusername').value.trim();
+    const email = document.querySelector('#registerstaticEmail').value.trim();
     const password = document.querySelector('#registerinputPassword').value.trim();
 
-    if (username && password) {
+    if (name && email && password) {
         const response = await fetch('/api/register', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ name, email, password }),
             headers: ({ 'Content-Type': 'application/json' })
         });
 

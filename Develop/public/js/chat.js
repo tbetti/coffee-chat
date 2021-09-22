@@ -4,10 +4,10 @@ const socket = io() // if we change this to something other than local host, it 
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
+const username = document.getElementById('username');
 
-const name = prompt('What is your name?')
 appendMessage('You joined')
-socket.emit('new-user', name)
+socket.emit('new-user', username.innerText);
 
 // When user receives message, other person's name will display with their message
 socket.on('chat-message', data => {

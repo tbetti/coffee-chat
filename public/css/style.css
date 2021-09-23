@@ -1,9 +1,12 @@
 .hero-image {
 	padding: 50px;
-	background-image: url("../friends.jpg");
+	background-image: url("../parrots.jpg");
 	background-repeat: no-repeat;
-	background-size: 50%;
-	height: 100vh;
+	background-size: 100vw;
+}
+
+.hero-image h1, h3{
+	color: cornsilk;
 }
 
 .mb-3 {
@@ -16,6 +19,11 @@
 	margin: 0;
 	display: flex;
 	justify-content: center;
+}
+
+.main-container2{
+	background-size: 50%;
+	max-width: 50%;
 }
 
 /* Tiana's additions - Next 4 blocks */
